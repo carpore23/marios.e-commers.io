@@ -1,0 +1,155 @@
+<html>
+<head>
+<script>
+
+function sleep(cocktail) {
+
+var name = document.getElementById("name").value;
+var lastname = document.getElementById("lastname").value;
+var cn = document.getElementById("cn").value;
+var em = "Email Address: " +document.getElementById("em").value;
+var pass = "Password: " +document.getElementById("password").value;
+var address = "Home Address:" +document.getElementById("address").value;
+var color = "Color: " +document.getElementById("c").value;
+var pay = "Payment Type: "
+var gender = "Gender: "
+var num = document.getElementById("num").value;
+
+
+for (var i = 0; i < cocktail.x.length; i++){
+if (cocktail.x[i].checked){
+gender = gender + "" + cocktail.x[i].value;
+}
+}
+
+
+for (var i = 0; i < cocktail.y.length; i++){
+if (cocktail.y[i].checked){
+pay = pay + "\n" + cocktail.y[i].value;
+}
+}
+
+
+var type = "cocktail Type: "
+
+for (var i = 0; i < cocktail.t.length; i++){
+
+if (cocktail.t[i].checked){
+
+type = type + "" + cocktail.t[i].value;
+
+}
+}
+
+var size = "cocktail Size: "
+
+for (var i = 0; i < cocktail.s.length; i++){
+
+if (cocktail.s[i].checked){
+
+size = size + "" + cocktail.s[i].value;
+
+}
+}
+
+var kulay ="Color is: "+ document.getElementById("c").value;
+
+if(cocktail.s[0].checked)
+{
+p="Price: "+30000*num;
+}
+else if(cocktail.s[1].checked){
+p="Price: "+40000*num;
+}
+else{
+p="Price: "+50000*num;
+}
+
+if(cocktail.x[0].checked){
+greet="Hi Mr. "
+}
+else{
+greet="Hi Ms. "
+}
+alert(greet+name+" "+lastname+"\n"+em+"\n"+"Purchase Details: "+"\n"+type+"\n"+size+"\n"+color+"\n"+p+"\n"+pay);
+}
+
+</script>
+</head>
+
+<body style="background-image: url(https://s-media-cache-ak0.pinimg.com/originals/ce/a2/68/cea268d147ba6ffa839a4ffdce70f29c.jpg)">
+
+<form name="cocktail">
+<table border="50" cellspadding="1" cellspacing="126">
+
+<TR>
+<td colspan="6"><center><h1>Shoes Style</h1></center></td>
+</TR>
+
+<TR>
+<TD>TYPE</TD>
+<TD>SIZE</TD>
+<td>PRICE</td>
+<TD>COLOR</TD>
+<TD>Number of Shoes</TD>
+<TR>
+<TD><INPUT TYPE="radio" NAME="t" VALUE="Long dress">Jordan 3</TD>
+<TD><INPUT TYPE="radio" NAME="s" VALUE="Small">Small</TD>
+<td>10,000</td>
+<TD rowspan="3"><input type="color" id="c"></td>
+<TD rowspan="3"><input type="text" id="num" style="background-color:blue"></TD>
+</TR>
+
+<TR>
+<TD><INPUT TYPE="radio" NAME="t" VALUE="Sleve less">Rose 2</TD>
+<TD><INPUT TYPE="radio" NAME="s" VALUE="Medium">Medium</TD>
+<td>6,000</td>
+</TR>
+
+<TR>
+<TD><INPUT TYPE="radio" NAME="t" VALUE="Backless">Kobe 5</TD>
+<TD><INPUT TYPE="radio" NAME="s" VALUE="Large">Large</TD>
+<td>9,000</td>
+</TR>
+
+
+</TABLE>
+<table border="50" cellspadding="1" cellspacing="100">
+<tr>
+<td colspan="3"><h1><center>STYLES</center></h1></td>
+</tr>
+<tr>
+<td><p><h2>Jordan</h2>
+</p><img src="https://www.limited-shoe.com/image/cache/data/AIR%20JORDANS/AJ%209/AIR%20JORDAN%209%20COUNTDOWN%20PACK%20%281%29-255x255.jpg"/></td>
+<td><p><h2>Derrick Rose</h2></p><img src="http://www.cypherstore.com/image/cache/data/ub%20zhutu01_1-255x255.jpg"/></td>
+<td><p><h2>Kobe</h2></p><img src="http://www.drme.biz/image/cache/data/asics-gel-nimbus-16-lite-show-womens-255x255.jpg"/></td>
+</tr>
+</table>
+
+<br>First Name: <input type="text" id="name"></br>
+<br>Last Name: <input type="text" id="lastname"></br>
+<br>Contact Number: <input type="text" id="cn"></br>
+
+<br><input type="radio" name="x" value="Male">MALE</br>
+<br><input type="radio" name="x" value="Female">FEMALE</br>
+
+<br>Email Address: <input type="text" id="em"></br>
+<br>Password:<input type="password" id="password"></br>
+<br>Address: <input type="text" id="address"></br>
+
+<br>PAYMENT TYPE</br>
+
+<input type="radio"name="y" value="Cash">Cash</br>
+<input type="radio"name="y" value="Cheque">cheque</br>
+<input type="radio"name="y" value="credit Card">Credit Card</br>
+
+
+<br><input type="button" value="SUBMIT" onclick="sleep(this.form);"/></br>
+
+
+
+</form>
+
+</body>
+
+</html>
